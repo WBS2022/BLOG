@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tops on 失語者/ Aphasia</title>
+    <link>https://WBS2022.github.io/top/</link>
+    <description>Recent content in Tops on 失語者/ Aphasia</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://WBS2022.github.io/top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://WBS2022.github.io/top/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://WBS2022.github.io/top/about/</guid>
+      <description>Last updated: 2022-03-13
+ WBS is a network ID that has been used since 2013. It was first known on Bahamut publishing articles related to personal lives abroad in the U.S. and reflections to interested movies and books. Digital arts and computer graphics were also my interests at that time.
+Keywords and Descriptions animal lovers , guitar, language learner, blogger, paperbook lovers
+stationary, traveler&#39;s notebook user, midori notebook user</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://WBS2022.github.io/top/books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://WBS2022.github.io/top/books/</guid>
+      <description>Machine learning学习笔记 Coursera 在线课程 Machine learning 笔记讲师: 吴恩达(Andrew Ng) 课程地址：https://www.coursera.org/lear</description>
+    </item>
+    
+    <item>
+      <title>Posts Archive</title>
+      <link>https://WBS2022.github.io/top/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://WBS2022.github.io/top/archive/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
