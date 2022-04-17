@@ -233,29 +233,55 @@
                 post-container">
 
                 
-                <p>身為工廠製造端的工程師，憑藉想寫一個 blog 的執念，終於在今年認識 Github 這個號稱是工程師臉書的服務平台，感謝同事在一次私下聚餐中引領我進入這個偉大的航道 (笑)</p>
+                <p>有鑑於網路上針對 Github + Hugo 建置 blog 資源雖豐富，對於入門者的 step by step 環境建置和編輯器統整尚不多，這邊將一些重點做成筆記，方便日後繼續編輯回顧。</p>
 <h2 id="關於-github-hugo-vscode-markdown">關於 Github, Hugo, VSCode, Markdown</h2>
-<p>有鑑於網路上針對 Github + Hugo 建置 blog 資源雖豐富，對於入門者的 step by step 環境建置和編輯器統整尚不多，這邊將一些重點做成筆記，方便日後繼續編輯回顧。</p>
 <p>Github 是一個<mark>透過 Git 進行版本控制 (版控)、用於備份且可共享的原始碼代管平台</mark>，和其他使用「單一儲存區」的版控工具不同，Git 可將資料「分散式儲存」在不同的本地設備，而 Github 則是基於相同的概念，除了專案作者將資料部屬在 Github 之外，其他在本地端修改的人也可以再重新上傳到 Github，如此一來便形成一個新的備份。</p>
 <p>Hugo 是一種<mark>用 Go 程式語言撰寫的靜態網頁生成器 (Static Site Generator)</mark>，是提供<mark>基於 JAMstack</mark> 快速建置網站且<mark>開放原始碼 (Open-source) 的框架工具 (Framework)</mark>。而 <code>JAMstack</code> 的 JAM 分別是 <code>JavaScript</code>、<code>API</code> 和 <code>Markup</code> 的縮寫，網路上都有詳盡的介紹。</p>
-<h2 id="to-get-started">To get started</h2>
-<p>前往 <a href="https://github.com/"><code>github.com</code></a> 並註冊一個 Github 帳號，另外，需準備的統整平台和編輯器如下:</p>
+<h2 id="before-start">Before start</h2>
+<p>Operate using <code>VSCode</code> and get prepared with <code>VSCode extensions</code> (Markdown, etc&hellip;)</p>
+<p><code>github.com</code></p>
 <p><code>Github Desktop</code></p>
 <p><code>Visual Studio Code (VSCode)</code></p>
 <p><code>Markdown All in One</code></p>
-<h2 id="github--hugo-sop">Github + Hugo SOP</h2>
+<h2 id="quick-start-for-github-pages">Quick start for Github pages</h2>
 <ol>
-<li>Operate using <code>VSCode</code> and get prepared with <code>VSCode extensions</code> (Markdown, etc&hellip;)</li>
-<li>Instal <code>Hugo</code></li>
-<li>Create a new site
-<pre tabindex="0"><code> create new site 自定義名稱
-</code></pre></li>
-<li>Download <code>Hugo theme</code></li>
-<li>Upload to Github through <code>Github Desktop</code></li>
+<li>
+<p>註冊 Github 並新建一個 Repository，所有的網頁內容新增和更新都會透過 Github Desktop 上傳至這個 Repository，Github 的網站有清楚的圖文教學。
+<a href="https://docs.github.com/en/pages/quickstart" target="_blank">Quickstart for GitHub Pages</a>
+(Repository 名稱輸入 <mark>帳號.github.io</mark>，執行步驟一到四即可，Theme 現階段不急著決定。)</p>
+</li>
+<li>
+<p>直接使用 Hugo release 安裝 Hugo 或開啟 VSCode 使用環境系統相對應的 one-liner 安裝。
+<a href="https://gohugo.io/getting-started/installing/" target="_blank">Install Hugo</a></p>
+</li>
 </ol>
-<h2 id="新增新文章">新增新文章</h2>
-<pre tabindex="0"><code> hugo new post/my-post.md
-</code></pre><p>在 /content/post 資料夾建立 my-post.md 文件</p>
+<h2 id="在-hugo-資料夾新建網站">在 Hugo 資料夾新建網站</h2>
+<pre tabindex="0"><code> cd C\Hugo
+ hugo new site 自定義名稱
+</code></pre><h2 id="新增主題">新增主題</h2>
+<p>在 <a href="https://themes.gohugo.io/" target="_blank">Hugo Themes</a> 選擇一個主題，依照主題的安裝說明下載到本地資料夾。</p>
+<pre tabindex="0"><code> cd C\Hugo\自定義名稱\themes
+ git clone https://github.com/依照主題說明
+</code></pre><h2 id="編輯網頁資訊">編輯網頁資訊</h2>
+<p>下載完 Hugo 主題後，本地的網站資料夾會出現一個 config.toml 的檔案，使用 VScode 開啟後依照需求修改內容。</p>
+<ul>
+<li>修改部落格 URL: owner.github.io</li>
+<li>修改部落格名稱</li>
+</ul>
+<h2 id="本地測試">本地測試</h2>
+<pre tabindex="0"><code> cd C\Hugo\自定義名稱
+ hugo serve
+</code></pre><p>執行完後，在瀏覽器中輸入網址 http://localhost:1313 便可以預覽網站。</p>
+<h2 id="建立-public-資料夾">建立 public 資料夾</h2>
+<pre tabindex="0"><code> cd C\Hugo\自定義名稱
+ hugo
+</code></pre><h2 id="在-github-部屬網頁">在 Github 部屬網頁</h2>
+<p>開起 Github Desktop 登入一開始註冊的帳戶，Desktop 會把 <mark>帳號.github.io</mark> 先 clone 到本地資料夾，之後把 publish 資料夾中的所有內容複製到 clone 出來的 <mark>帳號.github.io</mark> 資料夾，一般預設路徑是 C:\Users\登入帳號\Documents\GitHub\帳號.github.io。</p>
+<p>這時 Desktop 會偵測到新增內容，輸入更新備註後即可 <mark>Commit to main</mark>，最後在上方點選 <mark>Push/Fetch origin</mark> 完成布署，在瀏覽器中輸入網址 https://帳號.github.io 即可查看部落格。</p>
+<h2 id="新增文章">新增文章</h2>
+<pre tabindex="0"><code> cd C\Hugo\自定義名稱
+ hugo new post/my-post.md
+</code></pre><p>在 \content\post 資料夾建立 my-post.md 文件</p>
 <h2 id="程式碼">程式碼</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">apiVersion</span>: networking.istio.io/v1alpha3
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">kind</span>: Gateway
@@ -275,10 +301,10 @@
 </span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">privateKey</span>: /tmp/tls.key
 </span></span></code></pre></div><h2 id="references">References</h2>
 <ul>
-<li><a href="https://reurl.cc/yQbOa2">【工程師必懂的版本控制技術】什麼是GitHub?</a></li>
-<li><a href="https://reurl.cc/pWbp7r">在 GitHub 部署 Hugo 靜態網站</a></li>
-<li><a href="https://reurl.cc/Zrd87A">Github + Hugo</a></li>
-<li><a href="https://reurl.cc/VjZ2K6">我的 Hugo 工作流程</a></li>
+<li><a href="https://reurl.cc/yQbOa2" target="_blank">【工程師必懂的版本控制技術】什麼是GitHub?</a></li>
+<li><a href="https://reurl.cc/pWbp7r" target="_blank">在 GitHub 部署 Hugo 靜態網站</a></li>
+<li><a href="https://reurl.cc/Zrd87A" target="_blank">Github + Hugo</a></li>
+<li><a href="https://reurl.cc/VjZ2K6" target="_blank">我的 Hugo 工作流程</a></li>
 </ul>
 
                 
@@ -309,7 +335,7 @@
             return;
         }
         var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "disqus_dMPjtCXz1Q" + '.disqus.com/embed.js';
+        s.src = '//' + "wbs2022" + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
